@@ -90,7 +90,21 @@
             for (int i = 1; i <= f8.Count; i++) if (f8[i-1] == f8.Max()) Console.WriteLine($"\tA {i}. órában volt a legmagasabb az érték");
 
             Console.WriteLine("\n9. feladat:");
+            double f9 = 0;
+            foreach (var day in days) f9 += day._orak[11];
+            f9 /= days.Count;
+            Console.WriteLine($"\t A márciusi déli órák átlaga: {f9}");
 
+            Console.WriteLine("\n10. feladat:");
+            int f10_1 = 0;
+            int f10_2 = 0;
+            for (int i = 1; i <= days.Count; i++)
+            {
+                if (i < days.Count / 2) f10_1 += days[i - 1]._orak.Sum();
+                else f10_2 += days[i - 1]._orak.Sum();
+            }
+            if (f10_1 > f10_2) Console.WriteLine("\tAz első felében volt nagyobb");
+            else Console.WriteLine("\tA második felében volt nagyobb");
 
             Console.ReadLine();
         }
